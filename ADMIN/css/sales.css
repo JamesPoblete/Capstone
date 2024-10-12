@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  background-color: #1A1A40;
+  color: white;
+  height: 100vh;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 220px; /* Set a fixed width for the sidebar */
+  font-family: 'Poppins', sans-serif; /* Ensure the Poppins font is applied */
+}
+
+.sidebar *{
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; /* Set the font weight as needed */
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400; /* Regular weight */
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode .card h3,
+body.dark-mode .card {
+  color: #000000; /* Light text color for headings and inputs */
+}
+
+.dark-mode .user-name {
+  color: #ffffff;
+}
+
+.sales-prediction {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+  width: 200px; /* Set a narrower width for sales prediction */
+  border: 1px solid #888;
+  margin-top: 10px;
+}
+
+.sidebar-logo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 20px 0;
+  display: block;
+  object-fit: cover;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+  background-color: #FF6F61;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul li a:active {
+  background-color: #e0564b;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+}
+
+/* Sidebar Scroll */
+.sidebar {
+  overflow-y: auto;
+}
+
+/* Optional: Add subtle sidebar separator for each section */
+.sidebar hr {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 20px 0;
+}
+
+/* User Profile Section */
+.user-profile {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* Avatar Image */
+.user-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* Username and Dropdown Arrow */
+.user-name {
+  font-size: 14px;
+  color: #000000;
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+/* Main Content */
+.main-content {
+  width: 100%;
+  padding: 20px;
+  margin-left: 220px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.header-left .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #23253A;
+}
+
+.header-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-right i.fa-bell {
+  font-size: 1.2em;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-profile i.fa-user-circle {
+  font-size: 1.5em;
+  margin-right: 8px;
+}
+
+.user-profile span {
+  margin-right: 5px;
+}
+
+.user-profile i.fa-caret-down {
+  font-size: 0.9em;
+}
+
+.sales-prediction h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Margin for time selection input and label */
+.time-selection label,
+input {
+  margin: 10px 0; /* Space above and below the label */
+}
+
+.time-selection select,
+.time-selection input {
+  margin: 10px 0; /* Space above and below the input */
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.sales-prediction select,
+.sales-prediction input,
+.sales-prediction button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+}
+
+.predict-btn {
+  background-color: #1A1A40;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.predict-btn:hover {
+  background-color: #FF6F61;
+}
+
+.prediction-results {
+  background-color: #f4f4f4; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  padding: 20px; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 15px; 
+  width: 200px; /* Make this wider for comparison */
+}
+
+.prediction-results h3 {
+  font-size: 18px; 
+  margin-bottom: 10px; 
+}
+
+.prediction-results p {
+  margin: 5px 0; 
+  font-size: 16px; 
+}
+
+/* Style for prediction results and other cards */
+.prediction-results {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Original shadow */
+  padding: 20px;
+  border: 1px solid #888; /* Darker border color for better visibility */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+/* Make specific labels bold */
+.sales-prediction label {
+  font-weight: bold; /* Make all labels bold */
+  margin: 10px 0; /* Ensure there's some margin for spacing */
+}
+
+/* Style for select elements */
+.sales-prediction select,
+.sales-prediction input {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 5px; 
+  border: 1px solid #ccc; /* Original border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Darker shadow */
+}
+
+.sales-prediction select:focus,
+.sales-prediction input:focus {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  outline: none; 
+}
+
+.time-selection h4 {
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #1A1A40;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #3c3c5a;
+}

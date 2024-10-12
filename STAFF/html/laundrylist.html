@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laundry List</title>
+    <link rel="stylesheet" href="../css/laundrylist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="../img/ane-laundry-logo.png" alt="AN'E Laundry Logo" class="sidebar-logo"> 
+        <ul>
+          <li><a href="maindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="inventorylist.html"><i class="fas fa-box"></i> Inventory</a></li>
+          <li><a href="#"><i class="fas fa-chart-line"></i> Sales</a></li>
+          <li><a href="laundrylist.html"><i class="fas fa-list-alt"></i> Laundries List</a></li>
+          <li><a href="login.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <h1 class="logo"></h1>
+            </div>
+            <div class="header-right">
+                <i class="fa fa-bell"></i>
+                <div class="user-profile">
+                    <i class="fa fa-user-circle"></i>
+                    <span>Staff</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Laundry List Section -->
+        <div class="laundry-list-header">
+            <h2>Laundries</h2>
+            <button class="print-btn"><i class="fas fa-print">&nbsp;&nbsp;</i>Print Receipt</button>
+            <button class="add-laundry-btn"><i class="fas fa-plus">&nbsp;&nbsp;</i>Add Laundry</button>
+        </div>
+
+        <!-- Modal -->
+<div id="laundryModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <form id="laundryForm">
+  
+        <div class="form-container">
+  
+          <!-- Customer Information -->
+          <div class="card">
+            <h3>Customer Information</h3>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+  
+            <label for="date">Date</label>
+            <input type="date" id="date" placeholder="MM/DD/YYYY" required>
+  
+            <label for="load">Load</label>
+            <input type="text" id="load" placeholder="Load" required>
+            
+            <h4>Category of Service</h4>
+            <label><input type="checkbox" name="service" value="Wash-Dry-Fold"> Wash-Dry-Fold</label><br>
+            <label><input type="checkbox" name="service" value="Wash Only"> Wash Only</label><br>
+            <label><input type="checkbox" name="service" value="Dry Only"> Dry Only</label>
+          </div>
+  
+          <!-- Article Section -->
+          <div class="card">
+            <h3>Article</h3>
+            <label><input type="checkbox" name="article" value="Clothes"> Clothes (kg)</label>
+            <input type="text" placeholder="kg"><br>
+  
+            <label><input type="checkbox" name="article" value="Comforter Single"> Comforter Single (pieces)</label>
+            <input type="text" placeholder="pieces"><br>
+  
+            <label><input type="checkbox" name="article" value="Comforter Double"> Comforter Double (pieces)</label>
+            <input type="text" placeholder="pieces"><br>
+  
+            <label><input type="checkbox" name="article" value="Bedsheet"> Bedsheet/Curtains/Towel (kg)</label>
+            <input type="text" placeholder="kg"><br>
+  
+            <label><input type="checkbox" name="article" value="Others"> Others</label>
+            <input type="text" placeholder="(others)"><br>
+          </div>
+  
+          <!-- Detergent Section -->
+          <div class="card">
+            <h3>Detergent</h3>
+            <label><input type="checkbox" name="detergent" value="Tide"> Tide</label>
+            <input type="text" placeholder="Additional"><br>
+  
+            <label><input type="checkbox" name="detergent" value="Ariel"> Ariel</label>
+            <input type="text" placeholder="Additional"><br>
+  
+            <h3>Fabric Detergent</h3>
+            <label><input type="checkbox" name="fabricDetergent" value="Downy JF"> Downy JF</label>
+            <input type="text" placeholder="Additional"><br>
+  
+            <label><input type="checkbox" name="fabricDetergent" value="Downy SF"> Downy SF</label>
+            <input type="text" placeholder="Additional"><br>
+  
+            <label><input type="checkbox" name="fabricDetergent" value="Downy GB"> Downy GB</label>
+            <input type="text" placeholder="Additional"><br>
+  
+            <label for="total">Total:</label>
+            <input type="text" id="total" placeholder="" required>
+          </div>
+  
+        </div>
+  
+        <button type="submit" class="done-button">Done</button>
+      </form>
+    </div>
+  </div>
+  
+
+
+        <!-- Search Bar -->
+        <div class="search-filter-container">
+            <input type="text" id="search" placeholder="Search">
+            <select class="status-filter">
+                <option value="" selected disabled>Filter</option> 
+                <option value="Completed">Completed</option>
+                <option value="Pending">Pending</option>
+            </select>
+        </div>
+
+        <!-- Laundry List Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        <input type="checkbox" id="selectAll"> <span>Select All</span> <!-- Checkbox for "Select All" -->
+                    </th>
+                    <th>Order ID</th>
+                    <th>Date</th>
+                    <th>Customer</th>
+                    <th>Sales Channel</th>
+                    <th>Destination</th>
+                    <th>Items</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td>#7676</td>
+                    <td>06/30/2022</td>
+                    <td>Ramesh Chaudhary</td>
+                    <td>Store name</td>
+                    <td>Lalitpur</td>
+                    <td>33</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td>#7677</td>
+                    <td>06/30/2022</td>
+                    <td>Ramesh Chaudhary</td>
+                    <td>Store name</td>
+                    <td>Lalitpur</td>
+                    <td>3</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Custom JavaScript for "Select All" functionality -->
+    <script>
+        // Select All functionality
+        document.getElementById('selectAll').addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.select');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = this.checked;
+            }, this);
+        });
+
+        // Modal functionality
+        var modal = document.getElementById("laundryModal");
+        var btn = document.querySelector(".add-laundry-btn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function calculateTotal() {
+            // Placeholder for calculation logic
+            // Update the total displayed in the modal
+            document.querySelector(".total").innerText = "₱ 100.00"; // Example total
+        }
+    </script>
+</body>
+</html>

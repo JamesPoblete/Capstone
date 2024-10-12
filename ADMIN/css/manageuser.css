@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex; /* Flexbox layout */
+    min-height: 100vh; /* Full height */
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Set the font weight as needed */
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .card h3,
+body.dark-mode .card  {
+    color: #000000; /* Light text color for headings and inputs */
+}
+.dark-mode .user-name  {
+  color: #ffffff;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #1A1A40;
+    color: white;
+    height: 100vh;
+    width: 220px;
+    padding: 20px;
+    position: fixed; /* Fixed position to stick to the side */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: 220px; /* Set a fixed width for the sidebar */
+    font-family: 'Poppins', sans-serif; /* Ensure the Poppins font is applied */
+}
+
+.sidebar *{
+    overflow: hidden;
+}
+
+.sidebar-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    margin: 20px 0;
+    display: block;
+    object-fit: cover;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #FF6F61;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar ul li a:active {
+    background-color: #e0564b;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+}
+
+/* Sidebar Scroll */
+.sidebar {
+    overflow-y: auto;
+}
+
+/* Optional: Add subtle sidebar separator for each section */
+.sidebar hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.3);
+    margin: 20px 0;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1; /* Take up the remaining space */
+    padding: 20px;
+    margin-left: 220px; /* Create space for the sidebar */
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  
+  .header-left .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #23253A;
+  }
+  
+  .header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-right i.fa-bell {
+    font-size: 1.2em;
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .user-profile i.fa-user-circle {
+    font-size: 1.5em;
+    margin-right: 8px;
+  }
+  
+  .user-profile span {
+    margin-right: 5px;
+  }
+  
+  .user-profile i.fa-caret-down {
+    font-size: 0.9em;
+  }
+
+/* Avatar Image */
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #000000;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 120px;
+    z-index: 1000;
+}
+
+.dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown ul li {
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown ul li:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+}
+
+/* Search Bar */
+#search {
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #1A1A40;
+    color: white;
+    text-align: center;
+}
+
+th, td {
+    padding: 15px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+
+
+/* Button Styling */
+.add-user-btn {
+    display: inline-block; /* Makes the link behave like a button */
+    padding: 10px 15px; /* Add some padding */
+    background-color: #1A1A40; /* Button background color */
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+
+.add-user-btn:hover {
+    background-color: #f4f4f4;
+    color: #1A1A40;
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #1A1A40;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #3c3c5a;
+}
+
+.manageuser-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+
+} 
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px; /* Adjust size as needed */
+    padding: 5px;
+    color: #1A1A40; /* Icon color */
+    margin-right: 5px;
+}
+
+.icon-btn:hover {
+    color: #f4f4f4; 
+    background-color: #1A1A40;
+}
+

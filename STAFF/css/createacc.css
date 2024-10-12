@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(135deg, #1A1E46 0%, #5D5FEF 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ededed;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    width: 90vw; /* Use a smaller width for a nicer look */
+    max-width: 1000px; /* Limit the max width */
+    height: auto; /* Auto height to fit content */
+}
+
+.logo img {
+    max-width: 350px; /* Adjust size as needed */
+    height: 350px; /* Fixed height to maintain circle shape */
+    border-radius: 50%; /* Make the image circular */
+    object-fit: cover; /* Ensures the image covers the entire circular area without distortion */
+    border: 5px solid #fff; /* Optional: white border for a nice touch */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: shadow for depth */
+    margin-left: 30px; /* Adjust left position */
+    margin-right: 50px; /* Adjust right position */
+}
+
+.form-container {
+    flex: 1;
+}
+
+h2 {
+    font-size: 48px; /* Reduced size for better balance */
+    margin-bottom: 20px;
+    color: #1A1E46; /* Darker text for better readability */
+    text-align: center; /* Center align the heading */
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #1A1E46; /* Use primary color for consistency */
+    font-size: 16px; /* Slightly larger font */
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px; /* Increased padding for better touch */
+    border: 1px solid #ccc;
+    border-radius: 30px; /* Rounded edges for modern look */
+    font-size: 16px; /* Larger font for better readability */
+}
+
+.submit-btn {
+    background-color: #1A1E46; /* Consistent primary color */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px; /* Rounded button */
+    cursor: pointer;
+    font-size: 18px; /* Slightly larger for emphasis */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    width: 100%; /* Full width button */
+}
+
+.submit-btn:hover {
+    background-color: #141839; /* Darker shade on hover */
+}
+
+.back-to-login {
+    display: inline-block; /* Allow it to behave like a button */
+    margin-top: 20px; /* Space between the button and link */
+    text-decoration: none; /* Remove underline */
+    color: #1A1E46; /* Match the primary color */
+    font-size: 16px; /* Same font size as button */
+    font-weight: bold; /* Make it stand out */
+    padding: 10px 20px; /* Add some padding */
+    border: 2px solid #1A1E46; /* Border to resemble a button */
+    border-radius: 30px; /* Rounded edges */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-left: 166px; /* Adjust left position */
+   
+}
+
+.back-to-login:hover {
+    background-color: #1A1E46; /* Change background on hover */
+    color: white; /* Change text color on hover */
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        width: 90vw; /* Make it a bit narrower on mobile */
+    }
+
+    .form-container {
+        margin-left: 0;
+    }
+}

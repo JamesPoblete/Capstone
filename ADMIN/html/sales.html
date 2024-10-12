@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sales</title>
+  <link rel="stylesheet" href="../css/sales.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <img src="../img/ane-laundry-logo.png" alt="AN'E Laundry Logo" class="sidebar-logo"> 
+    <ul>
+      <li><a href="maindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="inventorylist.html"><i class="fas fa-box"></i> Inventory</a></li>
+      <li><a href="sales.html"><i class="fas fa-chart-line"></i> Sales</a></li>
+      <li><a href="laundrylist.html"><i class="fas fa-list-alt"></i> Laundries List</a></li>
+      <li><a href="manageuser.html"><i class="fas fa-users-cog"></i> Manage User</a></li>
+      <li><a href="login.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="main-header">
+      <div class="header-left">
+          <h1 class="logo"></h1>
+      </div>
+      
+      <div class="header-right">
+          <i class="fa fa-bell"></i>
+          <div class="user-profile">
+              <i class="fa fa-user-circle"></i>
+              <span>Admin</span>
+              <i class="fa fa-caret-down"></i>
+          </div>
+      </div>
+  </header>
+
+    <!-- Prediction Section -->
+    <div class="prediction-section" style="display: flex; gap: 20px;">
+      <!-- Sales Prediction Column -->
+      <div class="sales-prediction" style="flex: 1;">
+        <h3>Sales Prediction Period</h3>
+        <select id="prediction-period">
+          <option>Select (Daily, Monthly, Yearly, Overall)</option>
+          <option>Daily</option>
+          <option>Monthly</option>
+          <option>Yearly</option>
+          <option>Overall</option>
+        </select>
+
+        <div id="time-selection">
+          <h4>Time Selection Based on Chosen Period</h4>
+
+          <!-- Daily -->
+          <label for="specific-day">Select Specific Day:</label>
+          <input type="date" id="specific-day">
+
+          <!-- Monthly -->
+          <label for="specific-month">Select Specific Month:</label>
+          <input type="month" id="specific-month">
+
+          <!-- Yearly -->
+          <label for="specific-year">Select Specific Year:</label>
+          <input type="number" id="specific-year" placeholder="Year" min="2000" max="2100">
+
+          <!-- Overall -->
+          <label for="overall-date">Select Specific Date:</label>
+          <input type="date" id="overall-date">
+        </div>
+
+        <button class="predict-btn">Predict Sales</button>
+      </div>
+
+      <!-- Prediction Results Column -->
+      <div class="prediction-results" style="flex: 1;">
+        <h3>Prediction Results</h3>
+        <p>Predicted Sales for Monthly from January 2024 (Time Period Select)</p>
+        <p><strong>Predicted Sales:</strong> 10,000</p>
+
+        <h4>Breakdown by Week</h4>
+        <p>Week 1: 2,500</p>
+        <p>Week 2: 2,500</p>
+        <p>Week 3: 2,500</p>
+        <p>Week 4: 2,500</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Include dark mode script -->
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory</title>
+    <link rel="stylesheet" href="../css/inventorylist.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <img src="../img/ane-laundry-logo.png" alt="AN'E Laundry Logo" class="sidebar-logo"> 
+        <ul>
+          <li><a href="maindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+          <li><a href="inventorylist.html"><i class="fas fa-box"></i> Inventory</a></li>
+          <li><a href="sales.html"><i class="fas fa-chart-line"></i> Sales</a></li>
+          <li><a href="laundrylist.html"><i class="fas fa-list-alt"></i> Laundries List</a></li>
+          <li><a href="manageuser.html"><i class="fas fa-users-cog"></i> Manage User</a></li>
+          <li><a href="login.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+        </ul>
+    </div>
+
+    <!-- Main content area -->
+    <div class="main-content">
+        <header class="main-header">
+            <div class="header-left">
+                <h1 class="logo"></h1>
+            </div>
+            
+            <div class="header-right">
+                <i class="fa fa-bell"></i>
+                <div class="user-profile">
+                    <i class="fa fa-user-circle"></i>
+                    <span>Admin</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- Inventory List Header Section -->
+        <div class="inventory-list-header">
+            <h2>Inventory</h2>
+            <button class="print-btn"><i class="fas fa-print">&nbsp;&nbsp;</i>Print Report</button>
+            <button class="add-inventory-btn" id="addStockBtn"><i class="fas fa-plus">&nbsp;&nbsp;</i>Add Stock</button>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-filter-container">
+            <input type="text" id="search" placeholder="Search">
+            <select class="status-filter">
+                <option value="" selected disabled>Filter</option> 
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+
+        <!-- Inventory List Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" id="selectAll"> <span>Select All</span></th> 
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Type</th>
+                    <th>Current Stock</th>
+                    <th>Reorder Level</th>
+                    <th>Status</th>
+                    <th>Edit</th> <!-- New Edit Column -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td>#7676</td>
+                    <td>Tide</td>
+                    <td>Detergent</td>
+                    <td>50</td>
+                    <td>20</td>
+                    <td><span class="status high">High</span></td>
+                    <td><button class="edit-btn"><i class="fas fa-edit"></i></button></td> <!-- Edit Button -->
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td>#7677</td>
+                    <td>Ariel</td>
+                    <td>Detergent</td>
+                    <td>20</td>
+                    <td>15</td>
+                    <td><span class="status medium">Medium</span></td>
+                    <td><button class="edit-btn"><i class="fas fa-edit"></i></button></td> <!-- Edit Button -->
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="select"></td>
+                    <td>#7678</td>
+                    <td>Downy SF</td>
+                    <td>Fabric Detergent</td>
+                    <td>5</td>
+                    <td>10</td>
+                    <td><span class="status low">Low</span></td>
+                    <td><button class="edit-btn"><i class="fas fa-edit"></i></button></td> <!-- Edit Button -->
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal HTML -->
+<div id="addStockModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="modal-title">Add Stock</h3>
+        
+        <form id="addStockForm">
+            <div class="form-group">
+                <label for="productName">Product Name:</label>
+                <input type="text" id="productName" name="productName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="productType">Produt Type:</label>
+                <input type="text" id="supplier" name="supplier">
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" required>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="submit-btn">Add Stock</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+    
+    <script>
+        // Select All functionality
+        document.getElementById('selectAll').addEventListener('click', function() {
+            var checkboxes = document.querySelectorAll('.select');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = this.checked;
+            });
+        });
+    </script>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        var modal = document.getElementById('addStockModal');
+        var addStockBtn = document.getElementById('addStockBtn');
+        var closeBtn = document.querySelector('.modal .close');
+
+        addStockBtn.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            document.body.classList.add('modal-active');
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            document.body.classList.remove('modal-active');
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+                document.body.classList.remove('modal-active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f4f8; /* Light background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+.container {
+    display: flex;
+    background-color: white; /* Set container background to white */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    max-width: none; /* Disable max-width to take the entire screen width */
+    max-height: none; /* Disable max-height to take the entire screen height */
+}
+
+.logo-section {
+    border-radius: 0 10px 10px 0;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto; /* Optional: set specific height if needed */
+    margin-left: 10%;
+}
+
+.logo {
+    width: 100%; /* Make the logo fill the section width */
+    height: 100%; /* Make the logo fill the section height */
+    max-height: 100%; /* Set max-height to prevent excessive sizing */
+    object-fit: contain; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+}
+
+.logo-section h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #002366;
+}
+
+.tagline {
+    font-size: 12px; /* Smaller tagline size */
+    color: #666; /* Grey text for tagline */
+    text-align: center;
+}
+
+.form-section {
+    flex: 1; /* Fill the remaining space */
+    padding: 20px; /* Increased padding for form section */
+    display: flex;
+    flex-direction: column; /* Stack form elements */
+}
+
+.form-section h2 {
+    font-size: 24px; /* Form title size */
+    color: #002366; /* Dark blue */
+    margin-bottom: 20px; /* Space below title */
+    text-align: left;
+    margin-top: 50px;
+}
+
+.form-section label {
+    font-size: 15px; /* Label font size */
+    margin-bottom: 5px; /* Space below labels */
+    color: #333; /* Dark text */
+    text-align: left; /* Ensure text is left-aligned */
+    margin-left: 0; /* Align labels to the left */
+    display: block; /* Make the label a block element to take full width */
+}
+
+.form-section input {
+    width: 50%; /* Full width input */
+    padding: 12px; /* Padding for inputs */
+    margin-bottom: 20px; /* Space between inputs */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 100px; /* More rounded edges */
+    font-size: 14px; /* Input text size */
+    transition: border-color 0.3s; /* Smooth transition */
+}
+
+.form-section input:focus {
+    border-color: #002366; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+.form-section .signup-btn, .back-btn {
+    padding: 10px; /* Button padding */
+    border: none; /* Remove default border */
+    border-radius: 100px; /* More rounded button */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    width: 100%; /* Button width adjusted to be more centered */
+    max-width: 24%; /* Set a max width for buttons */
+}
+
+.form-section input::placeholder {
+    color: #aaa; /* Placeholder text color */
+    opacity: 1; /* Ensure opacity */
+}
+
+.already-account {
+    margin-top: 15px;
+    color: #002366;
+    cursor: pointer;
+    text-align: center; /* Center the text for already-account message */
+    margin-right: 330px;
+}
+
+.button-container {
+    display: flex; /* Use flexbox to align buttons */
+    justify-content: flex-start; /* Space between buttons */
+    margin-bottom: 20px; /* Space below buttons */
+}
+
+.form-section .back-btn {
+    padding: 10px; /* Button padding */
+    background-color: #f4f4f4; /* Light background for back button */
+    color: #001a4d; /* Dark text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 100px; /* Rounded edges */
+    font-size: 16px; /* Button text size */
+    cursor: pointer; /* Pointer on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    display: flex; /* To center text */
+    justify-content: center; /* Center text */
+    align-items: left; /* Center text vertically */
+    margin-left: 9px;
+    border: 1px solid #aaa;
+}
+
+.back-btn:hover {
+    background-color: #001a4d; /* Darker color on hover */
+    color: #f4f4f4;
+}
+
+.form-section .signup-btn {
+    background-color: #001a4d;
+    color: #f4f4f4;
+}
+
+.form-section .signup-btn:hover {
+    background-color: #f4f4f4;
+    color: #001a4d;
+    border: 1px solid #aaa;
+}
+

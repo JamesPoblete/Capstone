@@ -1,0 +1,457 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Set the font weight as needed */
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Regular weight */
+}
+
+
+/* Dark Mode for Main Content and Sidebar */
+body.dark-mode {
+    background-color: #121212; /* Dark background for the entire body */
+    color: #ffffff; /* Light text color for the entire body */
+}
+
+body.dark-mode .main-content {
+    background-color: transparent; /* Transparent background for main content */
+}
+
+body.dark-mode h2,
+body.dark-mode input,
+body.dark-mode button,
+body.dark-mode table th,
+body.dark-mode table td {
+    color: #ffffff; /* Light text color for headings and inputs */
+}
+.dark-mode .user-name  {
+    color: #ffffff;
+  }
+
+/* Sidebar */
+.sidebar {
+    background-color: #1A1A40;
+    color: white;
+    height: 100vh;
+    width: 220px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.sidebar *{
+    overflow: hidden;
+}
+
+.sidebar ul li a {
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Center align items vertically */
+    text-decoration: none; /* Remove underline from links */
+    color: #333; /* Change color to your preferred color */
+    padding: 10px; /* Add padding for better click area */
+}
+
+.sidebar ul li a i {
+    margin-right: 10px; /* Add space between icon and text */
+}
+
+
+.sidebar h2 {
+    font-size: 24px; /* Make the title slightly larger */
+    font-weight: bold;
+    text-align: center; /* Center the text */
+    margin-bottom: 30px; /* Adjust spacing */
+    color: #fff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.addStockForm {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-group input{
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.form-group label{
+    font-weight: bold;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #FF6F61; /* Highlight with a bright color on hover */
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Add a hover shadow */
+}
+
+.sidebar-logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%; /* Make it circular */
+    margin: 20px 0; /* Add some space above and below the logo */
+    display: block; /* Ensure it displays as a block element */
+    object-fit: cover; /* Maintain aspect ratio and cover the circle */
+}
+
+/* Main Content */
+.main-content {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    padding: 20px;
+    background-color: #f4f4f4; /* Default background color for main content */
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.header-left .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #23253A;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 12px;
+    padding-left: 30px; /* Space for icon */
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    font-size: 1em;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 10px;
+    color: #888;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right i.fa-bell {
+    font-size: 1.2em;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.user-profile i.fa-user-circle {
+    font-size: 1.5em;
+    margin-right: 8px;
+}
+
+.user-profile span {
+    margin-right: 5px;
+}
+
+.user-profile i.fa-caret-down {
+    font-size: 0.9em;
+}
+
+/* Inventory List Header */
+.inventory-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.print-btn, .add-inventory-btn {
+    padding: 10px 15px;
+    background-color: #1A1A40;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.print-btn {
+    background-color: #f4f4f4;
+    display: flex;
+    margin-left: auto;
+    border: 1px solid #1A1A40;
+    color: #1A1A40;
+    font-weight: bold;
+}
+
+.print-btn:hover {
+    background-color:#1A1A40 ;
+    color: #f4f4f4;
+}
+
+.add-inventory-btn:hover {
+    background-color: #f4f4f4;
+    color: #1A1A40;
+    border-color: #1A1A40;
+}
+
+/* Search Bar */
+.search-filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Space below the search and filter */
+}
+
+#search {
+    flex: 1; /* Allow the search bar to grow */
+    padding: 10px;
+    margin-right: 10px; /* Space between search and filter */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center; /* Center text */
+    vertical-align: middle; /* Center vertically */
+    border-bottom: 1px solid #ddd; /* Only horizontal borders */
+}
+
+th span {
+    margin-left: 10px;
+}
+
+th {
+    background-color: #1A1A40; /* Original background for light mode */
+    color: white;
+    text-align: center;
+}
+
+/* Status Styles */
+.status {
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.status.high {
+    background-color: #28a745;
+    color: white;
+}
+
+.status.medium {
+    background-color: #ffc107;
+    color: white;
+}
+
+.status.low {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Modal Background */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); /* Background with blur */
+    justify-content: center;
+    align-items: center;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 400px; /* Adjust width */
+    text-align: center;
+    position: relative;
+}
+
+/* Close Button */
+.modal .close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.status-filter {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    color: #1A1A40;
+    cursor: pointer;
+}
+
+.submit-btn{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn {
+    background-color: #1A1A40; /* Green */
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #FF6F61;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 90%;
+    }
+}
+
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-active {
+    overflow: hidden; /* Prevent scrolling when modal is open */
+}
+
+button {
+    padding: 5px 10px;
+    background-color: #f4f4f4;
+    color: #1A1A40;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1A1A40;
+    color: #f4f4f4;
+}
+
+.edit-btn {
+    font-size: 18px;
+}
+
+

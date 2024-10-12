@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AN'E Laundry Dashboard</title>
+  <link rel="stylesheet" href="../css/maindashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar"> 
+    <img src="../img/ane-laundry-logo.png" alt="AN'E Laundry Logo" class="sidebar-logo"> 
+    <ul>
+      <li><a href="maindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+      <li><a href="inventorylist.html"><i class="fas fa-box"></i> Inventory</a></li>
+      <li><a href="#"><i class="fas fa-chart-line"></i> Sales</a></li>
+      <li><a href="laundrylist.html"><i class="fas fa-list-alt"></i> Laundries List</a></li>
+      <li><a href="login.html" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+    </ul>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <header class="main-header">
+            <div class="header-left">
+                <h1 class="logo"></h1>
+            </div>
+            
+            <div class="header-right">
+                <i class="fa fa-bell"></i>
+                <div class="user-profile">
+                    <i class="fa fa-user-circle"></i>
+                    <span>Staff</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+            </div>
+        </header>
+
+    <!-- Cards for Revenue, Sales Return, Purchase, Income -->
+    <div class="cards">
+      <div class="card">
+        <h3><i class="fas fa-money-bill-wave"></i> Today's Sales</h3>
+        <p>+ 30,000</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-calendar-alt"></i> Monthly Sales</h3>
+        <p>+ 30,000</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-calendar-check"></i> Yearly Sales</h3>
+        <p>+ 30,000</p>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-wallet"></i> Yearly Income</h3>
+        <p>+ 30,000</p>
+      </div>
+    </div>
+
+    <!-- Chart and Tables -->
+    <div class="charts">
+      <div class="bar-chart">
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="top-used">
+        <h3>Top Used Detergent</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </div>
+
+    <!-- Stock Alert and Top Selling Products Tables -->
+    <div class="tables">
+      <div class="table">
+        <h3>Stock Alert</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Date</th>
+              <th>Quantity</th>
+              <th>Alert Amt.</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12345</td>
+              <td>2023-09-10</td>
+              <td>50</td>
+              <td>20</td>
+              <td>Low</td>
+            </tr>
+            <!-- More rows here -->
+          </tbody>
+        </table>
+      </div>
+      <div class="table">
+        <h3>Top Used Detergent</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Quantity</th>
+              <th>Alert Amt.</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>54321</td>
+              <td>100</td>
+              <td>50</td>
+              <td>Low</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Custom JavaScript for charts -->
+  <script src="../js/maindashboard.js"></script>
+
+  <!-- Include the dark mode script -->
+  <script src="../js/darkmode.js"></script>
+</body>
+</html>
